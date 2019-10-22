@@ -1,0 +1,96 @@
+/* 
+    Created on : 07.08.2016, 10:19:31
+    Author     : Valery Shusharin <shusharin_valery@mail.ru>
+*/
+
+
+$_input_border: $color_gray_light;
+$_input_bg: #fff;
+$_input_color: $color_black;
+$_input_focus_bg: $color_yellow_light;
+$_input_focus_border: $color_yellow_dark;
+
+$_form_btn_success_bg: $color_green;
+$_form_btn_success_color: #fff;
+
+input.form-control {
+    width: 100%;
+    height: 30px;
+    border: 1px solid $_input_border;
+    color: $_input_color;
+    padding: 9px;
+    background: $_input_bg;
+    line-height: .8;
+
+    &:focus{
+        outline: 0;
+        /*background: lighten($_input_focus_bg, 15);*/
+        border: 1px solid $_input_focus_border;
+    }
+}
+
+.checkbox-btn {
+    display: inline-block;
+    height: 30px;
+    min-width: 30px;
+    text-align: center;
+    border: 1px solid $_input_border;
+    color: $_input_color;
+    padding: 5px 8px;
+    background: $_input_bg;
+    font-weight: normal;
+    margin-left: -4px;
+    cursor: pointer;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently  not supported by any browser */
+
+    &:hover{
+        background: $_sp_btn_active_bg;
+    }
+
+    [type=checkbox] {
+        display: none;
+    }
+
+    label {
+        cursor: pointer;
+        margin: 0;
+    }
+
+    &:first-child {
+        margin-left: 0;
+    }
+}
+
+.checkbox-btn.active {
+    background: $_sp_btn_active_bg;
+}
+
+
+.btn {
+    height: 30px;
+    padding: 0 25px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    text-alight: center;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.btn-success {
+    background: $_form_btn_success_bg;
+    color: $_form_btn_success_color;
+    border-bottom: 1px solid darken($_form_btn_success_bg, 2);
+
+    &:hover{
+        background: darken($_form_btn_success_bg, 2);
+    }
+}

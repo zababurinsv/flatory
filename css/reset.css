@@ -1,0 +1,52 @@
+
+/* 
+************************************
+RESET
+************************************
+*/
+
+/*
+::-webkit-scrollbar{
+    width:13px;
+    background-color: #ffffff;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #a2cbf0;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: #75b3ea;
+}*/
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address,  cite, code,del, dfn, em, font, img, ins, small, strike, strong, sub, sup, tt, var,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td {
+margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; 
+    /*-moz-user-select: none;
+    -o-user-select:none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+     user-select: none; */
+}
+body { 
+line-height: 1;
+font-size: 62,5%;
+}
+
+ul { 
+list-style: none;
+}
+
+blockquote, q { 
+quotes: none;
+}
+
+:focus { outline: 0;}
+ins { text-decoration: none;}
+del { text-decoration: line-through;}
+table { border-collapse: separate; border-spacing: 5px;}
+
+/* end reset */
+body{
+    background-color: white;
+    /*min-width: 1086px;*/
+    font-size: 62.5%;
+}

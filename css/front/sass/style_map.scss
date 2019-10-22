@@ -1,0 +1,297 @@
+/* 
+    Created on : 23.11.2014, 20:54:10
+    Author     : Valery Shusharin <shusharin_valery@mail.ru>
+*/
+
+@import "_vars";
+@import "_normalize";
+@import "_helper";
+
+
+$yellow: #f8c92b;
+$dark_yellow: #f4bb27;
+
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 11px;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background: $yellow;
+}
+.wrapper {
+    width: 100%;
+    height: 100%
+}
+.logo {
+    display: block;
+    width: 300px;
+    padding: 0 20px;
+    background: #fff;
+}
+.left_column {
+    width: 300px; 
+    position: absolute;
+}
+.fiters_bar {
+    /*    position: fixed;
+        width: 300px;*/
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
+}
+.map {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    position: fixed;
+    margin-left: 300px;
+}
+
+.bg_brand {
+    background: $yellow;
+}
+
+/*SEARCH FILTERS & CONTROLS*/
+.filters_place {
+    width: 100%;
+    padding: 10px 20px 5px 20px;
+    background: $dark_yellow;
+}
+ul {
+    padding: 0;
+}
+.mark {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+@import "_search";
+@import "_objects";
+@import "_components";
+
+/*modal*/
+.modal-content {
+    /*padding: 15px;*/
+    border-radius: 0;
+
+    .modal-body {
+        /*border: 1px solid #ccc;*/
+        position: relative;
+        padding: 40px
+    }
+}
+.title-default {
+    font-size: 12px;
+    font-weight: bold;
+    color: #848484;
+    line-height: 1.5;    
+}
+
+
+.geo_nav {
+    margin: 0;
+}
+
+.furnish_filter {
+    .ui-selectmenu-button {
+        width: 100% !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+.form-section-header {
+    line-height: 1;
+}
+.clear_filter {
+    margin-top: 10px;
+}
+
+.rsv-complite {
+    width: 100%;
+    margin: 0;
+}
+.rsb-complite {
+    margin-left: 30px;
+    margin-top: -5px;
+    width: 77%;
+}
+
+.button_bg {
+    width: 154px;
+    height: 46px;
+    background-color: #4A9724;
+    border-radius: 5px;
+    margin: 0 auto;
+
+    .button_face {
+        width: 100%;
+        height: 41px;
+        background-color: #61b836;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    span {
+        font-family: 'Open Sans';
+        font-weight: 600;
+        font-size: 16px;
+        color: #FFF;
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 41px;
+    }
+}
+
+.footer, .push {
+    display: none;
+}
+
+/* YA MAP */
+.object_list_container .fb-gray {
+    /*margin-top: -3px;*/
+}
+.flatory-balloon-layout {
+    box-sizing: border-box;
+    padding: 15px;
+    background: #fff;
+    width: 425px;
+    font-family: 'Open Sans', Arial, Vardana, sans-serif;
+    font-size: 13px;
+    color: #4c4a4a;
+    min-height: 245px;
+    height: 245px;
+    position: relative;
+    /*top: -282px;*/
+    /* offcet baloon*/
+    margin-top: -282px;
+    margin-left: -5px;
+}
+/*.flatory-balloon-content*/
+.fb-left {
+    box-sizing: border-box;
+    width: 140px;
+    float: left;
+}
+/*.flatory-balloon-content*/ 
+.fb-left img {
+    max-width: 140px;
+    max-height: 215px;
+}
+.flatory-balloon-content .fb-right {
+    box-sizing: border-box;
+    width: 240px;
+    float: right;
+}
+.flatory-balloon-content h1 {
+    margin: 0 0 10px 0;
+}
+.flatory-balloon-content h1 a {
+    color: #74c84a;
+    font-size: 18px;
+}
+.flatory-balloon-content h4 {
+    font-size: 13px;
+    margin: 0 0 10px 0;
+}
+/*.flatory-balloon-content*/ 
+.fb-icon h2, 
+/*.flatory-balloon-content*/  
+.fb-icon strong {
+    display: inline-block;
+    margin: 0;
+}
+/*.flatory-balloon-content*/ 
+.fb-icon {
+    padding-left: 35px;
+    min-height: 25px;
+    margin-bottom: 5px;
+    line-height: 27px;
+}
+.none-icon {
+    padding: 0;
+}
+/*.flatory-balloon-content*/ 
+.fb-icon-rub {
+    background: url(/images/rub.png) no-repeat;
+}
+/*.flatory-balloon-content*/ 
+.fb-icon-space {
+    background: url(/images/area.png) no-repeat;
+}
+/*.flatory-balloon-content*/ 
+.fb-gray {
+    color: #848484;
+}
+.flatory-balloon-tail {
+    width: 53px;
+    height: 37px;
+    background: url(/images/map/flatoryBalloonTail.png);
+    position: absolute;
+    bottom: -37px;
+    left: 0;
+}
+.modal .close,
+.flatory-balloon-layout .close{
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    background: #c93a3a url(/images/map/map_exit_small.png) 8px 8px no-repeat;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    line-height: 22px;
+    font-size: 21px;
+}
+.flatory-balloon-layout .close:before {
+    content: '';
+}
+
+.fl-bl-l__map {
+
+    .object_list_container {
+        width: 240px;
+        float: right;
+    }
+
+    img {
+        max-width: 140px;
+        max-height: 215px;
+    }
+
+    .fb-icon-address {
+        margin-top: 5px;
+    }
+}
+
+.search-panel-map {
+
+
+    .progress {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 10px;
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+
+        .progress-bar {
+            width: 100%;
+        }
+    }
+
+
+}
+
+/* YA MAP END */

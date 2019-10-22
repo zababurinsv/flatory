@@ -1,0 +1,312 @@
+/* 
+    Created on : 18.10.2014, 15:50:15
+    Author     : Valery Shusharin <shusharin_valery@mail.ru>
+*/
+/*RESULT PANEL*/
+.result_panel {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 15px; 
+    padding: 10px 0;
+
+    a {
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    .result_panel__view_nav  {
+        margin-top: 3px;
+
+        a {
+            color: $color_text_main;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .active {
+            color: $link_color;
+            cursor: default;
+        }
+    }
+
+    .result_panel__view_nav_label {
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .result_panel__sort_nav {
+        margin-top: 12px;
+        font-size: 12px;
+
+        b {
+            font-size: inherit;
+        }
+        
+        a {
+            font-size: 1em;
+        }
+
+        .active {
+            font-weight: bold;
+        }
+
+        span {
+            font-size: .8em;
+            margin-right: 5px;
+        }
+    }
+}
+.control_btn {
+    padding: 15px;
+    display: block;
+}
+.control_btn_xs {
+    padding: 15px 0 15px 6px;
+    display: block;
+}
+.control_btn:hover, 
+.control_btn_xs:hover,
+.result_panel .active {
+    color: $link_color;
+}
+.icon_list, .icon_tile, .icon_asc, .icon_desc {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(/images/type_view.png) no-repeat;
+}
+.icon_asc, .icon_desc {
+    width: 25px;
+}
+.icon_list {
+    background-position: 0 0;
+}
+.icon_tile {
+    background-position: 0 -20px; 
+}
+.icon_asc {
+    background-position: 0 -40px; 
+}
+.icon_desc {
+    background-position: 0 -60px; 
+    font-size: 12px;
+}
+.filter_group{
+    float: left;
+    margin-left: 15px;
+    margin-top: 11px;
+}
+.filter_group label {
+    color: #4c4a4a;
+    font-weight: bold;
+    margin-top: 4px;
+    display: block;
+}
+/*RESULT PANEL END*/
+
+/* OBJECTS LIST */
+.objects_list{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.objects_list li {
+    box-sizing: border-box;
+    display: block;
+    padding: 15px;
+    width: 100%;
+    height: 245px;
+}
+.objects_list li:nth-child(2n+1) {
+    background: #f5f5f5;
+}
+.fb-left {
+    box-sizing: border-box;
+    width: 140px;
+    float: left;
+
+    img {
+        width: 140px;
+        height: 215px;
+    }
+}
+
+
+.object_list_container {
+    box-sizing: border-box;
+    width: 390px;
+    height: 215px;
+    position: relative;
+    float: left;
+    margin-left: 15px;
+    color: #4c4a4a;
+    font-size: 14px;
+}
+.object_list_container h3, 
+.object_list_container h2 {
+    font-size: 20px;
+    line-height: 1.3;
+}
+.object_list_container h3 {
+    margin: -5px 0 20px 0;
+}
+.object_list_container h3 a {
+    color: inherit;
+    font-size: 20px;
+    text-decoration: none;
+}
+.object_list_container h3 a:hover {
+    text-decoration: underline;
+}
+.object_list_container h4 {
+    color: #6bc43f;
+    font-size: 12px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+.object_list_container .fb-gray {
+    margin-top: 15px;
+    font-size: 12px;
+}
+.object_list_container sup {
+    font-size: 10px;
+}
+.fb-icon-xs {
+    display: block;
+    float: left;
+    margin-top: -8px;
+    min-height: 25px;
+    min-width: 25px;
+}
+.fb-icon-address {
+    background: url(/images/marker.png) no-repeat;
+}
+
+.f-obj-preview {
+    display: block;
+
+    .f-obj-preview__name {
+        margin-bottom: 5px;
+    }
+}
+
+
+.f-obj-preview__address_block {
+    width: 100%;
+    color: $color_green;
+
+    td {
+        height: 45px;
+        vertical-align: middle;
+        font-size: 13px;
+        line-height: 1.1;
+        text-align: left;
+        font-weight: 600;
+    }
+
+    .address_block__icon{
+        width: 25px;
+    }
+
+    .fb-icon-xs {
+        margin: 0;
+    }
+}
+/* OBJECTS LIST END */
+
+.objectcard {
+
+    td {
+        padding: 3px 0;
+    }
+
+    td:first-child {
+        padding-right: 15px;
+        vertical-align: top;
+        white-space: nowrap;
+    }
+
+    .objectcard-value {
+        font-weight: 700;
+    }
+
+    .objectcard-anchor {
+        white-space: nowrap;
+        font-size: .95em;
+    }
+}
+
+.line-subtitle {
+    min-height: 2em;
+    margin-top: 20px;
+    margin-bottom: 15px;
+
+    h4 {
+        display: inline;
+        padding: 0 20px;
+        background: #fff;
+        font-size: 1.5em;
+    }
+
+    hr {
+        margin-top: -1em;
+    }
+}
+
+.objectcard-prices {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+
+    th,
+    td {
+        padding: 10px 0;
+        text-align: left;
+        width: 25%;
+    }
+
+    th {
+        border-bottom: 1px solid $color_yellow;
+    }
+
+    td {
+        border-top: 1px solid $color_gray;
+    }
+}
+
+.objectcard-nav {
+    /*    display: block;
+        float: left;
+        min-height: 55px;*/
+    margin-top: 20px;
+
+    /*    a {
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+    
+            &:hover {
+                font-size: 1.2em;
+            }
+        }*/
+}
+
+.objectcard-metro-station {
+    display: inline-block;
+    margin-bottom: -10px;
+
+    td {
+        padding: 0 !important;
+        margin: 0 !important;
+        vertical-align: middle;
+    }
+}
+
+.build .fontello-icon {
+    font-size: 1.2em;
+}

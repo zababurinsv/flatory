@@ -1,0 +1,98 @@
+/* 
+    Created on : 05.12.2016, 20:32:48
+    Author     : Valery Shusharin <shusharin_valery@mail.ru>
+images/icons/1etaj_colonna.svg
+images/icons/bezopasnost.svg
+images/icons/blagoustroistvo.svg
+images/icons/detsad.svg
+images/icons/dvor.svg
+images/icons/kultura.svg
+images/icons/medicina.svg
+images/icons/ozelenenie.svg
+images/icons/parking.svg
+images/icons/religia.svg
+images/icons/shkola.svg
+images/icons/sport.svg
+images/icons/torgovlja.svg
+images/icons/transport.svg
+images/icons/voda.svg
+*/
+
+.inf-icon {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    margin-bottom: 5px;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+
+    &:hover {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 0;
+    }
+}
+
+.inf-icon-ground-floor {
+    background: url(images/icons/1etaj_colonna.svg);
+    background-size: cover;
+}
+.inf-icon-security {
+    background: url(images/icons/bezopasnost.svg);
+    background-size: cover;
+}
+.inf-icon-beautification {
+    background: url(images/icons/blagoustroistvo.svg);
+    background-size: cover;
+}
+.inf-icon-kindergarten {
+    background: url(images/icons/detsad.svg);
+    background-size: cover;
+}
+.inf-icon-court {
+    background: url(images/icons/dvor.svg);
+    background-size: cover;
+}
+.inf-icon-culture {
+    background: url(images/icons/kultura.svg);
+    background-size: cover;
+}
+.inf-icon-medicine {
+    background: url(images/icons/medicina.svg);
+    background-size: cover;
+}
+.inf-icon-planting-greenery {
+    background: url(images/icons/ozelenenie.svg);
+    background-size: cover;
+}
+.inf-icon-parking {
+    background: url(images/icons/parking.svg);
+    background-size: cover;
+}
+.inf-icon-religion {
+    background: url(images/icons/religia.svg);
+    background-size: cover;
+}
+.inf-icon-school {
+    background: url(images/icons/shkola.svg);
+    background-size: cover;
+}
+.inf-icon-sport {
+    background: url(images/icons/sport.svg);
+    background-size: cover;
+}
+.inf-icon-shops {
+    background: url(images/icons/torgovlja.svg);
+    background-size: cover;
+}
+.inf-icon-transport {
+    background: url(images/icons/transport.svg);
+    background-size: cover;
+}
+.inf-icon-water {
+    background: url(images/icons/voda.svg);
+    background-size: cover;
+}

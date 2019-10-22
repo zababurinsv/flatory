@@ -1,0 +1,32 @@
+/* 
+    Created on : 22.08.2016, 17:17:11
+    Author     : Valery Shusharin <shusharin_valery@mail.ru>
+*/
+
+$_n_c__color: $link_color;
+$_n_c__color_active: $color_red;
+
+.nav-catalog {
+    padding: 0 30px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    
+    .list-inline > li {
+        padding: 0 20px 0 0;
+    }
+
+    a {
+        font-size: 14px;
+        font-weight: bold;
+        color: $_n_c__color;
+        text-decoration: none;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .active a {
+        
+    }
+}

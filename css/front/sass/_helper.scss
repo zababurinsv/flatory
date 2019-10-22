@@ -1,0 +1,169 @@
+/* 
+    Created on : 23.09.2014, 11:13:53
+    Author     : Valery Shusharin <shusharin_valery@mail.ru>
+*/
+* {
+    margin: 0;
+}
+/* footer */
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -4em;
+}
+.footer, .push {
+    height: 4em;
+}
+.footer {
+    padding: 15px 0;
+}
+.footer, .push {
+    height: 4em;
+}
+
+/* GRID */
+.grid_row {
+    width: 100%;
+    clear: both;
+    font-family: 'Open Sans';
+    font-size: 11px;
+}
+.grid_row:before,
+.grid_row:after {
+    display: table;
+    content: " ";
+}
+.grid_row:after {
+    clear: both;
+}
+.grid_row .column_1 , .grid_row .column_4 , .grid_row .column_5 ,
+.grid_row .column_6 , .grid_row .column_7 , .grid_row .column_8 {
+    padding: 15px 15px 15px 0;
+    box-sizing: border-box;
+    float: left;
+    position: relative;
+}
+.grid_row .column_4 {
+    width: 34%;
+}
+.grid_row .column_5 {
+    width: 42%;
+}
+.grid_row .column_6 {
+    width: 50%;
+}
+.grid_row .column_7 {
+    width: 58%;
+}
+.grid_row .column_8 {
+    width: 66%;
+}
+.grid_row .column_1 {
+    width: 100%;
+}
+.grid_row .column_1:first-child , 
+.grid_row .column_4:first-child , 
+.grid_row .column_5:first-child , 
+.grid_row .column_6:first-child ,
+.grid_row .column_7:first-child ,
+.grid_row .column_8:first-child {
+    padding-left: 15px;
+}
+.space_top {
+    width: 100%;
+    margin-top: 15px;
+}
+.space_top_xs {
+    width: 100%;
+    margin-top: 10px;
+}
+.space_top_l {
+    margin-top: 20px;
+}
+.space_bottom {
+    width: 100%;
+    margin-bottom: 15px;
+}
+.space_bottom_l {
+    margin-bottom: 20px;
+}
+.space_bottom_xl {
+    margin-bottom: 25px;
+}
+.space_bottom_xxl {
+    margin-bottom: 30px;
+}
+.space_bottom_xs {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.space_bottom_none {
+    margin-bottom: 0 !important;
+}
+.space_right {
+    margin-right: 15px;
+}
+.space_left {
+    margin-left: 15px;
+}
+.space_row {
+    height: 15px;
+    width: 100%;
+}
+.padding_bottom_none {
+    padding-bottom: 0 !important; 
+}
+.padding_top_none {
+    padding-top: 0 !important; 
+}
+.padding_left_none {
+    padding-left: 0 !important; 
+}
+.padding_right_none {
+    padding-right: 0 !important; 
+}
+.padding_l_r_none {
+    padding-left: 0 !important;
+    padding-right: 0 !important; 
+}
+/* GRID END */
+
+/** Bootstrap STYLE */
+.pull-right {
+    float: right;
+}
+.pull-left {
+    float: left;
+}
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: " ";
+}
+
+.clearfix:after {
+    clear: both;
+}
+.hidden {
+    display: none !important;
+}
+/** BB STYLE END */
+
+/*hint for placeholders*/
+input::-webkit-input-placeholder { /* WebKit browsers */
+  line-height: 1.5em;
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  line-height: 1.5em;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+  line-height: 1.5em;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10+ */
+  line-height: 1.5em;
+}
+/*\hint for placeholders*/

@@ -1,0 +1,285 @@
+#wrapper {
+    padding-left: 250px;
+    transition: all 0.4s ease 0s;
+}
+
+#sidebar-wrapper {
+    margin-left: -250px;
+    left: 250px;
+    width: 230px;
+    background: #000;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    z-index: 1000;
+    transition: all 0.4s ease 0s;
+}
+
+#page-content-wrapper {
+    width: 100%;
+}
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 230px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-nav li {
+    line-height: 32px;
+    text-indent: 16px;
+}
+
+.sidebar-nav li a {
+    color: #999999;
+    display: block;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.sidebar-nav li a.active {
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+    text-decoration: none;
+}
+
+.sidebar-nav li a:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+    text-decoration: none;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    line-height: 60px;
+    font-size: 18px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+.content-header {
+    height: 65px;
+    line-height: 65px;
+}
+
+.content-header h1 {
+    margin: 0;
+    margin-left: 20px;
+    line-height: 60px;
+    display: inline-block;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.inset {
+    padding: 40px 40px 40px 20px;
+    padding-top: 0;
+}
+
+@media (max-width:767px) {
+
+    #wrapper {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        left: 0;
+    }
+
+    #wrapper.active {
+        position: relative;
+        left: 250px;
+    }
+
+    #wrapper.active #sidebar-wrapper {
+        left: 250px;
+        width: 250px;
+        transition: all 0.4s ease 0s;
+    }
+
+    #menu-toggle {
+        display: inline-block;
+    }
+
+    .inset {
+        padding: 15px;
+    }
+
+}
+.error_message{
+    position: absolute;
+    width: 250px;
+    height: 70px;
+    border-color: red;
+}
+.error{
+    border-color: red;
+}
+/* cruiches */
+.space_top {
+    width: 100%;
+    margin-top: 15px;
+}
+.space_top_xs {
+    width: 100%;
+    margin-top: 10px;
+}
+.space_bottom {
+    width: 100%;
+    margin-bottom: 15px;
+}
+.space_bottom_xs {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.space_bottom_none {
+    margin-bottom: 0 !important;
+}
+.space_right {
+    margin-right: 15px;
+}
+.space_left {
+    margin-left: 15px;
+}
+.space_none {
+    margin: 0;
+}
+.space_row {
+    height: 15px;
+    width: 100%;
+}
+.padding_bottom_none {
+    padding-bottom: 0 !important; 
+}
+.padding_top_none {
+    padding-top: 0 !important; 
+}
+.padding_left_none {
+    padding-left: 0 !important; 
+}
+.padding_right_none {
+    padding-right: 0 !important; 
+}
+.padding_l_r_none {
+    padding-left: 0 !important;
+    padding-right: 0 !important; 
+}
+/* cruiches  end*/
+.delete_item {
+    line-height: 1.3;
+}
+.pagination_btn {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: 5px;
+    line-height: 1.428571429;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    border-radius: 4px;
+}
+.pagination_btn:hover {
+    background-color: #eeeeee;
+    text-decoration: none;
+}
+.pagination_btn__active, .pagination_btn__active:hover {
+    color: #ffffff;
+    cursor: default;
+    background-color: #428bca;
+    border-color: #428bca;
+}
+.status_mark {
+    display: inline-block;
+    padding: 1px 5px 0px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+.status_mark_success {
+    color: #ffffff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+.status_mark_danger {
+    color: #ffffff;
+    background-color: #d2322d;
+    border-color: #ac2925;
+}
+.sort_link__asc:after {
+    position: relative;
+    top: 1px;
+    margin-left: 5px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    content: "\e155";
+}
+.sort_link__desc:after {
+    position: relative;
+    top: 1px;
+    margin-left: 5px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    content: "\e156";
+}
+/* icons */
+.dashboardicons-sprite, .dashboardicons-car, .dashboardicons-footprints, .dashboardicons-road {
+    background: url('/css/images/dashboardicons-sbe764ceb2a.png') no-repeat;
+}
+
+.dashboardicons-car {
+    background-position: 0 -64px;
+}
+
+.dashboardicons-footprints {
+    background-position: 0 0;
+}
+
+.dashboardicons-road {
+    background-position: 0 -32px;
+}
+.addon-dashboardicons{
+    padding: 0px 5px;
+}
+.addon-dashboardicons i {
+    display: block;
+    width: 32px;
+    height: 32px;
+}
+.addon-white {
+    background: #fff;
+}
+/* icons END */
+.btn label {
+    padding: 0;
+    margin: 0 0 0 5px;
+    font-weight: normal; 
+}
+.metro_station_del {
+    min-width: 107px; 
+    text-align: left;
+}

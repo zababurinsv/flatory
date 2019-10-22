@@ -1,0 +1,59 @@
+/* 
+    Created on : 23.09.2014, 11:13:53
+    Author     : Valery Shusharin <shusharin_valery@mail.ru>
+*/
+* {
+    margin: 0;
+}
+/* footer */
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -4em;
+}
+.footer, .push {
+    height: 4em;
+}
+.footer {
+    background: #202020;
+    color: #ccc;
+    padding: 15px 0;
+}
+.footer, .push {
+    height: 4em;
+}
+/* space helper */
+.space_top {
+    width: 100%;
+    height: 20px;
+}
+
+.space_bottom_l {
+    margin-bottom: 20px;
+}
+.space_bottom_xl {
+    margin-bottom: 25px;
+}
+.space_bottom_xxl {
+    margin-bottom: 30px;
+}
+.space_bottom_xs {
+    margin-bottom: 10px;
+}
+.space_right {
+    margin-right: 20px;
+}
+.space_right_xs {
+    margin-right: 5px;
+}
+.space_left {
+    margin-left: 20px;
+}
+.space_left_xs {
+    margin-left: 5px;
+}
+/* end space helper */

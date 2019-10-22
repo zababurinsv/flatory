@@ -1,0 +1,2 @@
+Flatory.ru
+admin interface

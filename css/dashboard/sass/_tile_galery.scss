@@ -1,0 +1,119 @@
+/* 
+    Created on : 11.04.2015, 12:49:56
+    Author     : Valery Shusharin <shusharin_valery@mail.ru>
+*/
+.tile_galery {
+
+    list-style: none;
+    padding: 0;
+
+    label {
+        font-weight: normal;
+    }
+
+    li {
+        width: 120px;
+        height: 150px;
+        float: left;
+        padding: 5px;
+        position: relative;
+
+        img {
+            max-width: 110px;
+            max-height: 110px;
+            min-width: 110px;
+            margin: 0 auto;
+        }
+    }
+
+    .tile_galery__label {
+        display: inline-block;
+        width: 85px;
+        white-space: nowrap;
+        text-overflow: ellipsis; 
+        overflow: hidden;
+    }
+
+    .item_control {
+        box-sizing: border-box;
+        width: 100px;
+        height: 16px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 0 5px;
+        background: rgba(255, 255, 255, 0.7);
+        cursor: move;
+
+        i {
+            cursor: pointer;
+
+            &:hover {
+                font-size: 1.2em;
+            }
+        }
+    }
+
+    .item_settings {
+        display: none;
+        position: absolute;
+        width: 92%;
+        top: -21px;
+
+        input {
+            width: 100%;
+        }
+    }
+
+    .hidebox {
+        position: absolute;
+        right: 0px;
+        top: -15px;
+    }
+
+    .form-group {
+        margin: 0;
+    }
+
+    .tile_galery__edit_item {
+        color: #000;
+        display: block;
+        float: left;
+        line-height: 1.2;
+    }
+}
+
+.file_icon {
+    position: relative;
+
+    .ext_pdf {
+        background: rgba(228, 56, 6, 0.7);
+        color: #fff;
+    }
+
+    .ext_docx, .ext_doc {
+        background: rgba(55, 107, 221, 0.7);
+        color: #fff;
+    }
+    .ext_xlsx, .ext_xls {
+        background: rgba(46, 166, 48, 0.7);
+        color: #fff;
+    }
+}
+
+/*@todo compass*/
+.js-transition {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.ws-nav-view-types {
+    float: right;
+    margin-right: 15px;
+
+    .active, .active:focus {
+        color: $green !important;
+    }
+}

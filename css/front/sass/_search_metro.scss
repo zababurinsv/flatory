@@ -1,0 +1,58 @@
+/* 
+    Created on : 29.09.2016, 19:56:40
+    Author     : Valery Shusharin <shusharin_valery@mail.ru>
+*/
+
+.metro-search {
+    min-height: 500px;
+}
+.metro-page {
+    width: 950px; 
+    position: relative;
+}
+
+.metro-loader {
+    display: block;
+    margin: 150px auto 0 auto;
+    opacity: .7;
+}
+
+.metro-station {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    cursor: pointer;
+
+    .metro-station-marker, 
+    .metro-station-point {
+        position: absolute;
+    }
+
+    .metro-station-marker {
+        background: none;
+        border: none;
+    }
+
+    .metro-station-point {
+        width: 15px;
+        height: 15px;
+        background: url(/images/metro/point.png) no-repeat;
+        display: none;
+    }
+
+    &.active {
+        .metro-station-point {
+            display: block;
+        }
+    }
+
+    &:hover {
+        .metro-station-marker {
+            /*            background: rgba(255,255,255,.4);
+                        border: 1px solid #ccc;*/
+        }
+    }
+}
+
+
+

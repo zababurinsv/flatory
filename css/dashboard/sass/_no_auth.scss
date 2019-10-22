@@ -1,0 +1,37 @@
+/* 
+    Created on : 03.08.2016, 14:49:36
+    Author     : Valery Shusharin <shusharin_valery@mail.ru>
+*/
+
+.no-auth-wrapper {
+    max-width: 450px; 
+    margin: 0 auto;
+    text-align: center;
+    
+    form {
+        padding: 0 50px;
+    }
+    
+    input {
+        text-align: center;
+    }
+    
+    .btn-primary {
+        min-width: 190px;
+    }
+}
+.no-auth-wrapper--logo {
+    display: block;
+    margin: 50px auto 10px auto;
+    width: 80%;
+}
+.no-auth-wrapper--message {
+    font-size: 2em; 
+    margin-bottom: 20px;
+    
+}
+.no-auth-wrapper--link-reset {
+    font-size: 1.5em; 
+    display: block; 
+    margin-bottom: 20px;
+}

@@ -1,0 +1,40 @@
+/* 
+    Created on : 07.08.2016, 10:29:34
+    Author     : Valery Shusharin <shusharin_valery@mail.ru>
+*/
+
+.row {
+    width: 100%;
+
+    &:before,
+        &:after {
+        clear: both;
+        display: table;
+        content: " ";
+    }
+}
+
+.col-25  {
+    width: 25%;
+    float: left;
+}
+
+.col-33 {
+    width: 33.3333%;
+    float: left;
+}
+
+.col-50 {
+    width: 50%;
+    float: left;
+}
+
+.clearfix:before,
+.clearfix:after,
+.modal-header:before,
+.modal-header:after,
+.modal-footer:before,
+.modal-footer:after {
+  content: " ";
+  display: table;
+}

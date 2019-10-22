@@ -1,0 +1,250 @@
+/* 
+    Created on : 06.08.2016, 9:43:39
+    Author     : Valery Shusharin <shusharin_valery@mail.ru>
+*/
+
+$_sp_bg: $color_yellow;
+$_sp_btn_bg: $color_green;
+$_sp_btn_color: #fff;
+$_sp_map_link_color: $color_red;
+$_sp_btn_active_bg: $color_yellow_light;
+$_sp_label_color: $color_text_main;
+$_sp_radio_link_color: $color_green;
+$_sp_radio_link_active_color: $color_red;
+
+/*map*/
+$_sp_map_bg: #fff;
+
+@import "_greed.scss";
+@import "_form.scss";
+@import "_modal.scss";
+@import "_geo_index.scss";
+
+input[type=text],
+input[type=password] {
+    box-sizing: border-box;
+}
+
+.width-25 {
+	width: 25%;
+}
+.width-50 {
+	width: 50%;
+}
+.width-65 {
+	width: 65%;
+}
+.width-70 {
+	width: 70%;
+}
+.width-100 {
+	width: 100%;
+}
+.padding_none {
+	padding: 0 !important;
+}
+
+.pull-right {
+	float: right !important;
+}
+.text-right {
+	text-align: right;
+}
+
+.clear-input {
+    position: relative;
+    
+    input {
+        cursor: pointer;
+    }
+    
+    .clear-input--clear {
+        display: block;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        right: 8px;
+        top: 8px;
+        background: url(/images/cancel.svg) 100% 100% no-repeat;
+        background-size: cover;
+        cursor: pointer;
+        -webkit-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        -ms-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        transition: all 0.4s;
+
+        &:hover {
+            transform: rotate(180deg);
+            width: 20px;
+            height: 20px;
+            top: 5px;
+        }
+
+    }
+}
+
+:after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+
+
+.radio-link {
+    display: inline-block;
+
+    [type=radio] {
+        display: none;
+    }
+}
+
+.search-panel {
+    display: block;
+    width: 100%;
+    min-width: 1000px;
+    background: $_sp_bg;
+    padding: 25px 15px;
+    font-size: 12px;
+
+    .row {
+        width: 100%;
+
+        &:before,
+            &:after {
+            clear: both;
+            display: table;
+            content: " ";
+        }
+
+    }
+
+    .form-group {
+        display: inline-block;
+        padding: 0 15px;
+        float: left;
+    }
+
+    label {
+        display: inline-block;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: $_sp_label_color;
+
+        sup {
+            line-height: 1;
+        }
+    }
+
+    .checkbox-btn label {
+        font-weight: normal;
+        line-height: 1.6;
+    }
+
+    button[type=submit] {
+        min-width: 145px;
+    }
+
+    .map-link {
+        display: inline-block;
+        color: $_sp_map_link_color;
+        font-weight: bold;
+        text-decoration: none;
+        border-bottom: 1px dashed $_sp_map_link_color;
+        padding-top: 10px;
+        text-align: right;
+        position: relative;
+        -webkit-transition: border-color .2s ease;
+        -moz-transition: border-color .2s ease;
+        -o-transition: border-color .2s ease;
+        -ms-transition: border-color .2s ease;
+        transition: border-color .2s ease;  
+
+        &:before {
+            content: " ";
+            display: block;
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            width: 18px;
+            height: 22px;
+            background: url(/images/wtf.png);
+            -webkit-transition: top .2s ease;
+            -moz-transition: top .2s ease;
+            -o-transition: top .2s ease;
+            -ms-transition: top .2s ease;
+            transition: top .2s ease;  
+        }
+
+        &:hover {
+            border-color: rgba(255,255,255,0);
+            color: darken($_sp_map_link_color, 2);
+        }
+
+    }
+
+    .row:first-child {
+        margin-bottom: 20px;
+    }
+
+    .radio-link{
+        margin-left: 15px;
+
+        label {
+            font-weight: normal;
+            color: $_sp_radio_link_color;
+            text-decoration: underline;
+            cursor: pointer;
+            
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .radio-link.active {
+        label {
+            font-weight: bold;
+            text-decoration: none;
+            cursor: default;
+            color: $_sp_radio_link_active_color;
+        }
+    }
+}
+
+.search-panel-map {
+    min-height: 300px;
+    width: 250px;
+    min-width: 250px;
+    padding: 0 13px;
+    background: $_sp_map_bg;
+    box-sizing: border-box;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    z-index: 999;
+
+    -webkit-box-shadow: 0px 2px 20px -2px rgba(0,0,0,0.41);
+    -moz-box-shadow: 0px 2px 20px -2px rgba(0,0,0,0.41);
+    box-shadow: 0px 2px 20px -2px rgba(0,0,0,0.41);
+
+    &>.form-group {
+        padding: 0;
+        margin-bottom: 18px;
+
+    }
+}
+
+.search-panel-map--logo {
+    border: none;
+}
+
+.search-message {
+    font-size: 13px;
+}
+
+@import '_search_metro';

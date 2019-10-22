@@ -1,0 +1,945 @@
+var search_type = true;
+var location_county = {
+    "ЦАО" : [
+        'Арбат',
+        'Басманный',
+        'Замоскворечье',
+        'Красносельский',
+        'Мещанский',
+        'Пресненский',
+        'Таганский',
+        'Тверской',
+        'Хамовники',
+        'Якиманка',
+    ],
+    "САО" : [
+        'Аэропорт',
+        'Беговой',
+        'Бескудниково',
+        'Войковский',
+        'Восточное Дегунино',
+        'Головинский',
+        'Дмитровский',
+        'Западное Дегунино',
+        'Коптево',
+        'Левобережный',
+        'Молжаниновский',
+        'Савёловский',
+        'Сокол',
+        'Тимирязевский',
+        'Ховрино',
+        'Хорошёвский',
+    ],
+    "СВАО" : [
+        'Алексеевский',
+        'Алтуфьевский',
+        'Бабушкинский',
+        'Бибирево',
+        'Бутырский',
+        'Лианозово',
+        'Лосиноостровский',
+        'Марфино',
+        'Марьина Роща',
+        'Останкинский',
+        'Отрадное',
+        'Северный',
+        'Ростокино',
+        'Свиблово',
+        'Северное Медведково',
+        'Южное Медведково',
+        'Ярославский',
+    ],
+    "ВАО" :[
+        'Богородское',
+        'Вешняки',
+        'Восточное Измайлово',
+        'Гольяново',
+        'Ивановское',
+        'Измайлово',
+        'Косино-Ухтомский',
+        'Метрогородок',
+        'Новогиреево',
+        'Новокосино',
+        'Перово',
+        'Посёлок Восточный',
+        'Преображенское',
+        'Северное Измайлово',
+        'Соколиная Гора',
+        'Сокольники',
+    ],
+    "ЮВАО" : [
+        'Выхино-Жулебино',
+        'Капотня',
+        'Кузьминки',
+        'Лефортово',
+        'Люблино',
+        'Марьино',
+        'Нижегородский',
+        'Печатники',
+        'Посёлок Некрасовка',
+        'Рязанский',
+        'Текстильщики',
+        'Южнопортовый',
+    ],
+    "ЮАО" :[
+        'Бирюлёво Западное',
+        'Бирюлёво Восточное',
+        'Братеево',
+        'Даниловский',
+        'Донской',
+        'Зябликово',
+        'Москворечье-Сабурово',
+        'Нагатино-Садовники',
+        'Нагатинский Затон',
+        'Нагорный',
+        'Орехово-Борисово Северное',
+        'Орехово-Борисово Южное',
+        'Царицыно',
+        'Чертаново Северное',
+        'Чертаново Центральное',
+        'Чертаново Южное',
+    ],
+    "ЮЗАО" : [
+        'Академический',
+        'Гагаринский',
+        'Зюзино',
+        'Коньково',
+        'Котловка',
+        'Ломоносовский',
+        'Обручевский',
+        'Северное Бутово',
+        'Тёплый Стан',
+        'Черёмушки',
+        'Южное Бутово',
+        'Ясенево',
+    ],
+    "ЗАО" : [
+        'Внуково',
+        'Дорогомилово',
+        'Крылатское',
+        'Кунцево',
+        'Можайский',
+        'Ново-Переделкино',
+        'Очаково-Матвеевское',
+        'Проспект Вернадского',
+        'Раменки',
+        'Солнцево',
+        'Тропарёво-Никулино',
+        'Филёвский Парк',
+        'Фили-Давыдково',
+    ],
+    "СЗАО" : [
+        'Куркино',
+        'Митино',
+        'Покровское-Стрешнево',
+        'Северное Тушино',
+        'Строгино',
+        'Хорошёво-Мнёвники',
+        'Щукино',
+        'Южное Тушино',
+    ],
+    "Зеленоград" : [
+        'Крюково',
+        'Матушкино',
+        'Савёлки',
+        'Силино',
+        'Старое Крюково',
+    ],
+    "ТиНАО" : [
+        'Вороновское',
+        'Воскресенское',
+        'Внуковское',
+        'Десёновское',
+        'Киевский',
+        'Клёновское',
+        'Кокошкино',
+        'Краснопахорское',
+        'Марушкинское',
+        'Михайлово-Ярцевское',
+        'Московский',
+        'Мосрентген',
+        'Новофёдоровское',
+        'Первомайское',
+        'Роговское',
+        'Рязановское',
+        'Сосенское',
+        'Троицк',
+        'Филимонковское',
+        'Щаповское',
+        'Щербинка',
+    ],
+}
+
+var location_zone = [
+    'Волоколамский район',
+    'Воскресенский район',
+    'Дмитровский район',
+    'Егорьевский район',
+    'Зарайский район',
+    'Истринский район',
+    'Каширский район',
+    'Клинский район',
+    'Коломенский район',
+    'Красногорский район',
+    'Ленинский район',
+    'Лотошинский район',
+    'Луховицкий район',
+    'Люберецкий район',
+    'Можайский район',
+    'Мытищинский район',
+    'Наро-Фоминский район',
+    'Ногинский район',
+    'Одинцовский район',
+    'Озёрский район',
+    'Орехово-Зуевский район',
+    'Павлово-Посадский район',
+    'Подольский район',
+    'Пушкинский район',
+    'Раменский район',
+    'Рузский район',
+    'Серебряно-Прудский район',
+    'Сергиево-Посадский район',
+    'Серпуховский район',
+    'Солнечногорский район',
+    'Ступинский район',
+    'Талдомский район',
+    'Чеховский район',
+    'Шатурский район',
+    'Шаховской район',
+    'Щёлковский район',
+    'Балашиха, городской округ',
+    'Бронницы, городской округ',
+    'Дзержинский, городской округ',
+    'Долгопрудный, городской округ',
+    'Домодедово, городской округ',
+    'Дубна, городской округ',
+    'Железнодорожный, городской округ',
+    'Жуковский, городской округ',
+    'Звенигород, городской округ',
+    'Ивантеевка, городской округ',
+    'Климовск, городской округ',
+    'Коломна, городской округ',
+    'Королёв, городской округ',
+    'Котельники, городской округ',
+    'Красноармейск, городской округ',
+    'Лобня, городской округ',
+    'Лосино-Петровский, городской округ',
+    'Лыткарино, городской округ',
+    'Орехово-Зуево, городской округ',
+    'Подольск, городской округ',
+    'Протвино, городской округ',
+    'Пущино, городской округ',
+    'Реутов, городской округ',
+    'Рошаль, городской округ',
+    'Серпухов, городской округ',
+    'Фрязино, городской округ',
+    'Химки, городской округ',
+    'Черноголовка, городской округ',
+    'Электрогорск, городской округ',
+    'Электросталь, городской округ',
+    'Юбилейный, городской округ',
+
+]
+$(document).ready(function(){
+
+    var new_param = '';
+
+    for(var key in location_county) {
+        if (key == 'ЦАО'){
+            $('#zone_1_1_page').text(location_county[key][0]);
+            $('#zone_1_1_map').text(location_county[key][0]);
+            $('.select_body_2').find('table').html('');
+            for(var i = 0;i<location_county[key].length;i++){
+                new_param += '<tr><td>'+location_county[key][i]+'</td></tr>';
+            }
+        }
+    }
+    $(new_param).appendTo($('.select_body_2 table'));
+
+    $('.bg_exit').click(function(){
+        $(".bg_map_search").css('display','none');
+        select_once();    
+    });
+    
+    $('#map_search').click(function(){
+        $(".bg_map_search").css('display','block');
+        select_once();   
+    });
+    
+    /* Переключатель МОСКВА <--> ОБЛАСТЬ */
+    
+    var tran_m_mo_param = {
+        "m_mo_page":{
+            "second" : {
+                "start":0 ,
+                "end":100 ,
+                "runner_1": "53px",
+                "runner_2": "105px",
+                "pipe_layer_3_width": "56px" ,
+                "pipe_layer_3_left": "53px",
+                "move_1_text": 32,
+                "move_2_text": 64,
+                "move_1_left": "52px",
+                "move_2_left": "105px",
+                "end_parameter": 100,
+            },
+            "first": {
+                "start": 0,
+                "end": 3,
+                "runner_1": "53px",
+                "runner_2": "105px",
+                "pipe_layer_3_width": "56px" ,
+                "pipe_layer_3_left": "53px",
+                "move_1_text": "1.0",
+                "move_2_text": "2.0",
+                "move_1_left": "52px",
+                "move_2_left": "105px",
+                "end_parameter": 3,
+                 
+            }    
+        },
+        "radio_page":{
+            "first": {
+                "start": 0,
+                "end": 3,
+                "runner_1": "53px",
+                "runner_2": "105px",
+                "pipe_layer_3_width": "56px" ,
+                "pipe_layer_3_left": "53px",
+                "move_1_text": "1.0",
+                "move_2_text": "2.0",
+                "move_1_left": "52px",
+                "move_2_left": "105px",
+                "end_parameter": 3,
+                 
+            },   
+            "second" : {
+                "start": 0,
+                "end": 30,
+                "runner_1": "53px",
+                "runner_2": "105px",
+                "pipe_layer_3_width": "56px" ,
+                "pipe_layer_3_left": "53px",
+                "move_1_text": 10,
+                "move_2_text": 20,
+                "move_1_left": "52px",
+                "move_2_left": "105px",
+                "end_parameter": 30,
+            }
+        },
+////////////////////////////////////////////////////////
+      
+        "radio_map":{
+            "second" : {
+                "start": 0,
+                "end": 30,
+                "runner_1": "41px",
+                "runner_2": "82px",
+                "pipe_layer_3_width": "40px" ,
+                "pipe_layer_3_left": "45px",
+                "move_1_text": 10,
+                "move_2_text": 20,
+                "move_1_left": "41px",
+                "move_2_left": "82px",
+                "end_parameter": 30,
+            },
+            "first": {
+                "start": 0,
+                "end": 3,
+                "runner_1": "41px",
+                "runner_2": "82px",
+                "pipe_layer_3_width": "40px" ,
+                "pipe_layer_3_left": "45px",
+                "move_1_text": "1.0",
+                "move_2_text": "2.0",
+                "move_1_left": "41px",
+                "move_2_left": "82px",
+                "end_parameter": 3,
+                 
+            }    
+        }
+    }
+/*
+******************************
+RADIO_BUTTON
+******************************
+*/
+    $('.radio_block > div').click(function(){
+        var img = $(this).parent().find('img');
+        img.each(function(key){
+            if(img.eq(key).attr('src') == '/images/new/radio_inside.png'){
+                img.eq(key).attr('src','/images/new/radio_outside.png');
+                runner_view(1,"radio_page","first");
+                runner_view(6,"radio_map","first");
+            }else{
+                img.eq(key).attr('src','/images/new/radio_inside.png');
+                runner_view(1,"radio_page","second");
+                runner_view(6,"radio_map","second");
+            }
+        });
+    });
+
+/*
+******************************
+RADIO_BUTTON -> END
+******************************
+*/
+    function runner_view(id,level,key){
+            $('#'+id).find('.start').text(tran_m_mo_param[level][key].start);
+            $('#'+id).find('.end').text(tran_m_mo_param[level][key].end);
+            $('#'+id).find('.runner_1').css('left',tran_m_mo_param[level][key].runner_1);
+            $('#'+id).find('.runner_2').css('left',tran_m_mo_param[level][key].runner_2);
+            $('#'+id).find('.pipe_layer_3').css('width',tran_m_mo_param[level][key].pipe_layer_3_width);
+            $('#'+id).find('.pipe_layer_3').css('left',tran_m_mo_param[level][key].pipe_layer_3_left);
+            $('#'+id).find('.move_1').text(tran_m_mo_param[level][key].move_1_text);
+            $('#'+id).find('.move_2').text(tran_m_mo_param[level][key].move_2_text);
+            $('#'+id).find('.move_1').css('left',tran_m_mo_param[level][key].move_1_left);
+            $('#'+id).find('.move_2').css('left',tran_m_mo_param[level][key].move_2_left);
+            end_param = runner_settings['group_1'].end_param = tran_m_mo_param[level][key].end_parameter; //конечный  параметр   
+    }
+    
+    var location = true;
+    $('.mark').click(function(){
+        var elem = $('.mark');
+        elem.each(function(key){
+            if($('.search').height() == 308){
+                if(elem.eq(key).attr('class').indexOf('button_M_laier_1_1') != -1){
+                    location = false;
+                    elem.eq(key).removeClass('button_M_laier_1_1');
+                    elem.eq(key).addClass('button_M_laier_1');
+                    elem.eq(key).children().removeClass('button_M_laier_2_2');
+                    elem.eq(key).children().addClass('button_M_laier_2');
+                    
+                    // Видоизменение странцы //
+                    $('.first_column .layer_1').css('display','none');
+                    $('.first_column .layer_3').css('display','none');
+                    $('.first_column .layer_2').css('top','45px');
+                    $('#layer_2_name').html('<span class="type_name_2">Расстояние от МКАД <span> &nbsp;(км)</span></span>');
+                    $('#layer_3_name').html('<span class="type_name_2">Расстояние от МКАД <span> &nbsp;(км)</span></span>');
+                    
+                    runner_view(1,"m_mo_page","second");
+                    
+                    $('.default .def_on_off').css('display','none');
+                    
+                    $('.select_face_1').css('display','none');
+                    $('.select_face_2').css('display','none');
+                    $('.select_face_1_1').css('display','block');
+                    $('.select_face_2_2').css('display','block');
+                    $('.second_column .sub_layer_1_1 .title_1').html('Направление<span style="position: relative;left: 62px;">Город</span>');
+                    
+                    $('#map_layer_2_O').css('display','block');
+                    $('#map_layer_2_M').css('display','none');                   
+                    
+                }else{
+                    location = true;
+
+                    // Откат страницы //
+                    $('.first_column .layer_1').css('display','block');
+                    $('.first_column .layer_3').css('display','block');
+                    $('.first_column .layer_2').css('top','0px');
+                    $('#layer_2_name').html('<span class="type_name">Удаленность (км)</span>');
+                    $('#layer_3_name').html('<span class="type_name">Удаленность (км)</span>');
+                    $('.default .def_on_off').css('display','block');
+                    
+                    runner_view(1,"m_mo_page","first");
+                    $('#transport_page div').find('img').eq(0).attr('src','/images/new/radio_inside.png');
+                    $('#transport_page div').find('img').eq(2).attr('src','/images/new/radio_inside.png');
+
+                    $('#transport_page div').find('img').eq(1).attr('src','/images/new/radio_outside.png');
+                    $('#transport_page div').find('img').eq(3).attr('src','/images/new/radio_outside.png');
+                    
+                    $('.select_face_1').css('display','block');
+                    $('.select_face_2').css('display','block');
+                    $('.select_face_1_1').css('display','none');
+                    $('.select_face_2_2').css('display','none');
+                    $('.second_column .sub_layer_1_1 .title_1').html('Район');
+                    
+                    $('#map_layer_2_O').css('display','none');
+                    $('#map_layer_2_M').css('display','block');   
+                    
+                    
+                    elem.eq(key).removeClass('button_M_laier_1');
+                    elem.eq(key).addClass('button_M_laier_1_1');
+                    elem.eq(key).children().removeClass('button_M_laier_2');
+                    elem.eq(key).children().addClass('button_M_laier_2_2');
+                    
+                }
+            }
+        });
+    });
+    /* END */
+    
+    // ПОКАЗАТЬ СКРЫТЬ РАСШИРЕННЫЙ ПОИСК // 
+        $('.extends_search').click(function(){
+            if($('.search').height() == 308){
+                search_type = true; // Поиск по названию
+                $('.search').animate({height:"79px"},200);
+                
+                $('.first_column .layer_1').css('display','none');
+                $('.first_column .layer_2').css('display','none');
+                $('.first_column .layer_3').css('display','none');
+                
+                $('.second_column .layer_1').css('display','none');
+                $('.second_column .layer_3').css('display','none');
+                $('.third_column .def_on_off').css('display','none');
+                $('.third_column .layer_1').css('display','none');
+                $('.third_column .button_bg').css('bottom','16px');
+                $(this).children().attr('src','/images/new/arroe_search_down.png');
+            }else{
+                search_type = false; // Расширенный поиск
+                $('.search').animate({height:"308px"},200);
+                if($('.select_face_1_1').css('display') == 'block'){
+                    $('.first_column .layer_2').css('display','block');
+                }else{
+                    $('.first_column .layer_1').css('display','block');
+                    $('.first_column .layer_2').css('display','block');
+                    $('.first_column .layer_3').css('display','block');
+                    $('.third_column .def_on_off').css('display','block');
+                }
+                $('.second_column .layer_1').css('display','block');
+                $('.second_column .layer_3').css('display','block');
+                $('.third_column .layer_1').css('display','block');
+                $('.third_column .button_bg').css('bottom','16px');
+                $(this).children().attr('src','/images/new/arrow_search.png');
+            }
+        });
+    // END //
+    
+/*
+******************************
+ПОЛЗУНКИ
+******************************
+*/
+
+    var runner_settings = {
+        "group_1" : {
+            "end_param" : 3,
+            "fillet" : 1,
+            "width_limit" : 163,
+        },
+        "group_2" : {
+            "end_param" : 30,
+            "fillet" : 0,
+            "width_limit" : 123,
+        },
+        "group_3" : {
+            "end_param" : 200,
+            "fillet" : 1,
+            "width_limit" : 123,
+        },
+        "group_4" : {
+            "end_param" : 100,
+            "fillet" : 1,
+            "width_limit" : 142,
+        },
+        "group_5" : {
+            "end_param" : 200,
+            "fillet" : 1,
+            "width_limit" : 143,
+        },
+        "group_6" : {
+            "end_param" : 3,
+            "fillet" : 1,
+            "width_limit" : 120,
+        },
+        "group_7" : {
+            "end_param" : 30,
+            "fillet" : 1,
+            "width_limit" : 120,
+        },
+        "group_8" : {
+            "end_param" : 200,
+            "fillet" : 1,
+            "width_limit" : 120,
+        },
+        "group_9" : {
+            "end_param" : 100,
+            "fillet" : 1,
+            "width_limit" : 164,
+        },
+        "group_10" : {
+            "end_param" : 200,
+            "fillet" : 1,
+            "width_limit" : 164,
+        },
+        "group_11" : {
+            "end_param" : 100,
+            "fillet" : 1,
+            "width_limit" : 274,
+        },
+    }
+    $('.runner').mousedown(function(event){
+        $(this).parents('.pipe').addClass('active'); // Маркеруем активный блок скроллера
+        $(this).addClass('active_runner'); // маркеруем ручку за которую держимся
+        
+        var target,parents_runner,start_X,this_is,left_start;
+        
+        event = event || window.event;
+        target = event.target || event.srcElement;
+        start_X = event.clientX;
+        
+        left_start = parseInt($('.active_runner').css('left'));
+        
+        $(this).parent().parent().mousemove(function(event){
+            var target,handle,start_param,end_param,full_width,pixel_width,left_parav,neighbouring,width_limit,fillet;
+            
+            // Кросбраузерность //
+            event = event || window.event;
+            target = event.target || event.srcElement;
+            
+            // параметры для решения веса пиксела //
+            handle = $('.active_runner').attr('class').substr(0,8)
+            
+            start_param = parseFloat($('.'+handle).parent('#'+$('.active').attr('id')).find('.start').text()); //стартовый параметр
+            end_param = runner_settings['group_'+$('.active').attr('id')].end_param; //конечный  параметр 
+            fillet = runner_settings['group_'+$('.active').attr('id')].fillet; // Округление значений
+            width_limit = runner_settings['group_'+$('.active').attr('id')].width_limit; // Предел вылета бегунка
+            
+            left_parav = parseFloat(left_start+(event.clientX - start_X)); // сдвиг бегунка 
+            pixel_width = width_limit/(end_param - start_param); // 
+            
+            if(handle == "runner_2"){
+                $('.active').find('.move_2').text((parseFloat($('.active_runner').css('left'))/pixel_width).toFixed(fillet));
+                neighbouring = parseInt($('.active').find('.runner_1').css('left'));
+                
+                if(left_parav >=0 && left_parav <= width_limit && left_parav > neighbouring+17 ){
+                    $('.active_runner').css('left',left_parav);
+                    $('.active').find('.move_2').css('left',left_parav);
+                    $('.active').find('.pipe_layer_3').width(left_parav-parseInt($('.active').find('.pipe_layer_3').css('left')));
+                }
+            }else{
+                $('.active').find('.move_1').text((parseFloat($('.active_runner').css('left'))/pixel_width).toFixed(fillet));
+                neighbouring = parseInt($('.active').find('.runner_2').css('left'));
+                
+                if(left_parav >=0 && left_parav <= width_limit && left_parav < neighbouring-17 ){
+                    $('.active_runner').css('left',left_parav);
+                    $('.active').find('.move_1').css('left',left_parav);
+                    $('.active').find('.pipe_layer_3').css('left',left_parav);
+                    $('.active').find('.pipe_layer_3').width(parseInt($('.active').find('.runner_2').css('left')) - left_parav);
+                }            
+            }
+        });
+        
+        $(document).mouseup(function(){
+            $('.layer_2').unbind('mousemove');
+            $('.block_move').unbind('mousemove');
+            $('.block_move_right').unbind('mousemove');
+            $('.block_move_left').unbind('mousemove');
+            $('.active').removeClass('active');
+            $('.active_runner').removeClass('active_runner');
+        });
+    });
+/*
+******************************
+ПОЛЗУНКИ -> END
+******************************
+*/
+
+/*
+******************************
+SELECT_BOX
+******************************
+*/
+$(document).click(function(e){
+    var one,two;
+    if($(e.target).attr('class') != undefined){
+        one = $(e.target).attr('class').indexOf('select_face');
+        console.log(one == -1);
+    }
+    
+    if($(e.target).parents('.select_face').attr('class') != undefined){
+       two = $(e.target).parents('.select_face').attr('class').indexOf('select_face'); 
+       console.log(two == -1);
+    }
+    
+    if($(e.target).parents('.select_body').attr('class') == undefined && one == -1 || two == -1){
+        select_once();
+    }
+});
+
+$('.select_face_1').click(function(){
+    
+   if($('.select_body_1').css('display') == 'none'){
+        select_once();
+        $('.select_body_1').css('display','block');
+        
+   }else{
+        $('.select_body_1').css('display','none');
+   }
+});
+$('.select_face_2').click(function(){
+
+   if($('.select_body_2').css('display') == 'none'){
+        select_once();
+        $('.select_body_2').css('display','block');
+   }else{
+        $('.select_body_2').css('display','none');
+   }
+});
+
+$('.select_face_1_1').click(function(){
+    select_once();
+   if($('.select_body_1_1').css('display') == 'none'){
+        select_once();
+        $('.select_body_1_1').css('display','block');
+   }else{
+        $('.select_body_1_1').css('display','none');
+   }
+});
+$('.select_face_2_2').click(function(){
+
+   if($('.select_body_2_2').css('display') == 'none'){
+        select_once();
+        $('.select_body_2_2').css('display','block');
+   }else{
+        $('.select_body_2_2').css('display','none');
+   }
+});
+
+$('.select_face_3').click(function(){
+   if($('.select_body_3').css('display') == 'none'){
+        select_once();
+        $('.select_body_3').css('display','block');
+   }else{
+        $('.select_body_3').css('display','none');
+   }
+});
+$('.select_face_4').click(function(){
+
+   if($('.select_body_4').css('display') == 'none'){
+        select_once();
+        $('.select_body_4').css('display','block');
+   }else{
+        $('.select_body_4').css('display','none');
+   }
+});
+$('.select_face_5').click(function(){
+   if($('.select_body_5').css('display') == 'none'){
+        select_once();
+        $('.select_body_5').css('display','block');
+   }else{
+        $('.select_body_5').css('display','none');
+   }
+});
+
+$('.select_body_1  td').click(function(){
+    $('.select_face_1').find('span').text($(this).text());
+    $('.select_body_1').css('display',"none");
+    county_select($(this).text())
+    select_once();
+});
+$('.select_body_2  td').live("click",function(){
+    $('.select_face_2').find('span').text($(this).text());
+    $('.select_body_2').css('display',"none");
+    select_once();
+});
+
+$('.select_body_1_1  td').click(function(){
+    $('.select_face_1_1').find('span').text($(this).text());
+    $('.select_body_1_1').css('display',"none");
+    select_once();
+});
+$('.select_body_2_2  td').click(function(){
+    $('.select_face_2_2').find('span').text($(this).text());
+    $('.select_body_2_2').css('display',"none");
+    select_once();
+});
+
+$('.select_body_3  td').click(function(){
+    $('.select_face_3').find('span').text($(this).text());
+    $('.select_body_3').css('display',"none");
+    select_once();
+});
+
+$('.select_body_4  td').click(function(){
+    $('.select_face_4').find('span').text($(this).text());
+    $('.select_body_4').css('display',"none");
+    select_once();
+});
+$('.select_body_5  td').click(function(){
+    $('.select_face_5').find('span').text($(this).text());
+    $('.select_body_5').css('display',"none");
+    select_once();
+});
+/*
+******************************
+SELECT_BOX - > END
+******************************
+*/
+/*
+******************************
+CHECKBOX
+******************************
+*/
+var check_array = [false,false,false,false,false,false,false]; // это можно получить и там будут лежать все результаты chrckbox-ов
+$('.line_select_block > img').click(function(){
+    check_array = [];
+    var img_obj = $(this).parent().find('img');
+    if($(this).attr('src') == '/images/new/ch_box_normal.png'){
+        $(this).attr('src','/images/new/ch_box_active.png');
+        
+    }else{
+        $(this).attr('src','/images/new/ch_box_normal.png');
+
+    }
+    img_obj.each(function(key){
+        if(img_obj.eq(key).attr('src') == '/images/new/ch_box_normal.png'){
+            check_array.push(false);
+        }else{
+            check_array.push(true);
+        }
+    });
+
+});
+
+/*
+******************************
+CHECKBOX -> END
+******************************
+*/
+/*
+******************************
+POST - > START
+******************************
+*/
+/* post_page */
+$('#page_search_start').click(function(){
+    var transport;
+    if($('#radio_page').attr('src') == '/images/new/radio_inside.png'){
+        transport = true; // Пешком
+    }else{
+        transport = false; // На транспорте
+    }
+    /* ПО МОСКВЕ */
+    $.post(
+        "/search/",
+        {
+            window:'',
+            metro: $('#metro_page').val(), //Метро input
+            type: location, // Москва true Область false
+            direction: $('#select_face_1_1_page').text(), // Направление
+            city: $('#select_face_2_2_page').text(), // Город
+
+            ot_metro: parseFloat($("#remotess_1_page").text()), // Удаленность от
+            do_metro: parseFloat($("#remotess_2_page").text()), // Удаленность до
+
+            transport: transport, // На транспорте или пешком
+            object_name: $('#search_center_page').val(), // Поиск по названию
+            county: $('#zone_1_page').text(), // Район Москва
+            destrict: $('#zone_1_1_page').text(), // Район рядом с районом там селект еще есть
+            room: JSON.stringify(check_array), // СЕТ ЧЕКБОКСОВ на счет комнат
+            ot_floor: parseFloat($('#floats_ot_page').text()), // Этажность от
+            do_floor: parseFloat($('#floats_do_page').text()), // Этажность до
+            ot_metrag: parseFloat($('#full_area_ot_page').text()), // Общая площадь от
+            do_metrag: parseFloat($('#full_area_do_page').text()), // Общая площадь до
+            otdelka: $('#select_face_3_page').text(), // Отделка
+            kvartal: $('#select_face_4_page').text(), // Срок сдачи
+            year: $('#select_face_5_page').text(), // Срок сдачи
+            ot_price: parseFloat($('#prase_ot_page').text()), // Стоимость от
+            do_price: parseFloat($('#prase_do_page').text()), // Стоимость до
+            ot_meter_price: parseFloat($('#prase_meter_ot_page').text()), // Цена за квадратный метр от
+            do_meter_price: parseFloat($('#prase_meter_do_page').text()), // Цена за квадратный метр до
+        }
+    ).success(function(data){
+            $('#other_content').hide();
+            $('#search_result').html(data).show();
+            $('html, body').animate({
+                scrollTop: $("#search_result").offset().top
+            }, 2000);
+        })
+});
+/* END */
+/* post_map */
+$('#map_search_start').click(function(){
+    var ot_metro;
+    var do_metro;
+    var transport;
+    if($('#radio_map').attr('src') == '/images/new/radio_inside.png'){
+        transport = true; // Пешком
+    }else{
+        transport = false; // На транспорте
+    }
+    if(location == true){
+        ot_metro = parseFloat($("#remotess_1_M_map").text())
+        do_metro = parseFloat($("#remotess_2_M_map").text())
+    } else {
+        ot_metro = parseFloat($("#remotess_1_O_map").text())
+        do_metro = parseFloat($("#remotess_2_O_map").text())
+    }
+   $.post(
+        "/search/",
+        {
+            /* ПО МОСКВЕ */
+            map: '',
+            metro: $('#metro_map').val(), //Метро input
+            //Относится к области
+            type: location, // Москва true Область false
+            direction: $('#select_face_1_1_map').text(), // Направление
+            city: $('#select_face_2_2_map').text(), // Город
+            ot_metro:ot_metro, // Удаленность от
+            do_metro:do_metro , // Удаленность до
+            transport: transport, // На транспорте или пешком
+            object_name: $('#search_center_map').val(), // Поиск по названию
+            county: $('#zone_1_map').text(), // Район
+            destrict: $('#zone_1_1_map').text(), // Район рядом с районом там селект еще есть
+            room: JSON.stringify(check_array), // СЕТ ЧЕКБОКСОВ на счет комнат
+            ot_floor: parseFloat($('#floats_ot_map').text()), // Этажность от
+            do_floor: parseFloat($('#floats_do_map').text()), // Этажность до
+            ot_metrag: parseFloat($('#full_area_ot_map').text()), // Общая площадь от
+            do_metrag: parseFloat($('#full_area_do_map').text()), // Общая площадь до
+            otdelka: $('#select_face_3_map').text(), // Отделка
+            kvartal: $('#select_face_4_map').text(), // Срок сдачи
+            year: $('#select_face_5_map').text(), // Срок сдачи
+            ot_price: parseFloat($('#prase_ot_map').text()), // Стоимость от
+            do_price: parseFloat($('#prase_do_map').text()), // Стоимость до
+            ot_meter_price: parseFloat($('#prase_meter_ot_map').text()), // Цена за квадратный метр от
+            do_meter_price: parseFloat($('#prase_meter_do_map').text()), // Цена за квадратный метр до
+
+        }
+   ) 
+});
+/* END */
+/*
+******************************
+POST - > END
+******************************
+*/
+
+
+
+});
+// Функция контролирует чтоб был всего один селект бокс открыт //
+function select_once(){
+    $('.select_body').each(function(key){
+        $('.select_body').eq(key).css('display','none');
+    });
+}
+
+/* SEARCH DATA */
+
+function county_select(text){
+    var new_param = '';
+    for(var key in location_county) {
+        if (key == text){
+            $('.select_body_2').find('table').html('');
+            for(var i = 0;i<location_county[key].length;i++){
+                if(i == 0) {
+                    $('#zone_1_1_page').text(location_county[key][i]);
+                    $('#zone_1_1_map').text(location_county[key][i]);
+                }
+                new_param += '<tr><td>'+location_county[key][i]+'</td></tr>';
+            }
+        }
+    }
+    $(new_param).appendTo($('.select_body_2 table'));
+}
+function county_select_map(){
+    for(var key in location_county) {
+    if (key == $("#county_map option:selected").text()){
+    $('#destrict_msk_map option').remove();
+    for(var i = 0;i<location_county[key].length;i++){
+    $('#destrict_msk_map').append('<option>'+location_county[key][i]+'</option>');
+    }
+}
+}
+}

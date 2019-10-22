@@ -1,0 +1,24 @@
+/* 
+    Created on : 17.10.2015, 21:27:31
+    Author     : Valery Shusharin <shusharin_valery@mail.ru>
+*/
+.breadcrumb {
+    margin-bottom: 20px;
+    list-style: none;
+    font-size: 13px;
+
+    &>li {
+        display: inline-block;
+    }
+
+    &>li+li:before {
+        padding: 0 5px;
+        color: #ccc;
+        content: "/\00a0";
+    }
+
+    &>.active, 
+    &>.active a {
+        color: #777;
+    }
+}

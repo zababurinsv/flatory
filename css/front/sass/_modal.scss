@@ -1,0 +1,37 @@
+
+$_modal_close_bg: $color_red;
+
+.modal {
+
+    .modal-content {
+        padding: 25px;
+        border: none;
+    }
+
+    .close {
+        border: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 25px;
+        height: 25px;
+        background: $_modal_close_bg url(/images/map/map_exit_small.png) 8px 8px no-repeat;
+        cursor: pointer;
+        color: #fff;
+        text-align: center;
+        line-height: 22px;
+        font-size: 21px;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            background-color: darken($_modal_close_bg, 2);
+        }
+        
+        span {
+            display: none;
+        }
+    }
+}

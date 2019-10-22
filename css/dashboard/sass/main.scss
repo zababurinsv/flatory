@@ -1,0 +1,342 @@
+/* 
+    Created on : 11.12.2016, 0:41:37
+    Author     : Valery Shusharin <shusharin_valery@mail.ru>
+*/
+
+@import "colors.scss";
+@import "_no_auth.scss";
+@import "_helper.scss";
+@import "_greed.scss";
+@import "_upload.scss";
+@import "_tile_galery.scss";
+@import "_filters.scss";
+@import "_style_fixes.scss";
+@import "_objectcard.scss";
+@import "_widget_storage.scss";
+
+$status_size: 16px;
+
+h1 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.breadcrumb {
+    margin-bottom: 10px;
+    background: none;
+}
+.nav-pagination {
+    float: right;
+}
+
+a:focus {
+    color: inherit !important;
+    outline: none;
+}
+a.text-info:focus {
+    color: $blue !important;
+    outline: none;
+
+    &:hover {
+        color: $blue-dark !important;
+    }
+}
+
+.status {
+    display: inline-block;
+    width: $status_size;
+    height: $status_size;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    position: relative;
+    background: none;
+    margin-top: 2px;
+    margin-bottom: -2px;
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: $status_size - 4;
+        height: $status_size - 4;
+        border-radius: inherit;
+        background: #ccc;
+        left: 1px;
+        top: 1px;
+    }
+}
+.status-active {
+    border: 1px solid $green;
+
+    &:after {
+        background: $green;
+    }
+}
+
+.status-danger {
+    border: 1px solid $red;
+
+    &:after {
+        background: $red;
+    }
+}
+
+.status-archive {
+    border: 1px solid $yellow;
+
+    &:after {
+        background: $yellow;
+    }
+}
+
+.status-not-published {
+    border: 1px solid $black;
+
+    &:after {
+        background: $black;
+    }
+}
+
+.methodTags {
+    margin: 0;
+}
+
+.panel-status-archive {
+    .panel-body {
+        border-top: 2px solid $yellow;
+    }
+}
+.panel-status-active {
+    .panel-body {
+        border-top: 2px solid $green;
+    }
+}
+.panel-status-not-published {
+    .panel-body {
+        border-top: 2px solid $black;
+    }
+}
+
+.table {
+
+    .header {
+        &.header-sort-down,
+        &.header-sort-up {
+
+            white-space: nowrap;
+            color: $green;
+            border-bottom: 2px solid $green !important;
+
+            a {
+                color: $green;
+
+                &:after {
+                    display: inline-block;
+                    width: 0;
+                    height: 0;
+                    content: "";
+                    margin-right: -10px;
+                    margin-bottom: 2px;
+                    margin-left: 5px;
+                    border-right: 4px solid transparent;
+                    border-left: 4px solid transparent;
+                }
+            }
+        }
+
+        &.header-sort-down a:after{
+            border-bottom: 4px solid;
+        }
+
+        &.header-sort-up a:after{
+            border-top: 4px solid;
+        }
+    }
+
+
+}
+
+.cke_chrome {
+    box-shadow: none !important;
+    border-color: #e4e5e7 !important;
+    border-radius: 4px !important;
+}
+
+.cke_top {
+    border: none !important;
+    border-bottom: 1px solid #e4e5e7 !important;
+    background: #eee url(images/ui-bg_highlight-soft_100_eeeeee_1x100.png) 50% top repeat-x !important;
+    box-shadow: none !important;
+}
+
+.panel-body-cover {
+    .panel-heading {
+        cursor: pointer;
+    }
+}
+
+.global__plug {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(202, 212, 226, 0.4);
+    display: none;
+    z-index: 9999;
+}
+.global__message {
+    width: 30%;
+    height: auto;
+    left: 35%;
+    top: 40%;
+    position: absolute;
+}
+
+.form-group {
+    position: relative;
+
+    .rm-form-group {
+        position: absolute;
+        right: 10px;
+        bottom: 8px;
+        top: auto;
+        cursor: pointer;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.5s linear;
+    }
+
+    &.row .rm-form-group{
+        right: 25px;
+    }
+
+    &:hover .rm-form-group {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+/*@todo compass*/
+.js-transition {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.chx-w-inp {
+    width: 350px;
+    margin-bottom: 5px;
+
+
+    label {
+        margin: 0 10px 0 0 ;
+    }
+
+    .chx-w-inp-input {
+        border: none;
+        border-bottom: 1px solid #ccc;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        line-height: 1;
+
+        &:focus {
+            outline: none;
+            border-bottom: 1px solid #FFA54E;
+        }
+
+        &:disabled {
+            background: none;
+            border-bottom: none;
+            display: none;
+        }
+    }
+}
+
+.js-by-colomns-item {
+    display: none;
+}
+
+.js-by-colomns-list {
+    .js-by-colomns-item {
+        display: block;
+    }
+}
+
+.category-name {
+    font-size: 13px;
+}
+
+.icon-ext {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+
+.icon-ext-pdf {
+    background: url(/images/f_pdf.svg) no-repeat;
+}
+.icon-ext-docx {
+    background: url(/images/f_word.svg) no-repeat;
+}
+.icon-ext-doc {
+    background: url(/images/f_word.svg) no-repeat;
+}
+.icon-ext-xlsx {
+    background: url(/images/f_excel.svg) no-repeat;
+}
+.icon-ext-xls {
+    background: url(/images/f_excel.svg) no-repeat;
+}
+
+.doc-list-item {
+    position: relative;
+    padding: 5px 0 5px 26px;
+    line-height: 1.7;
+
+    .icon-ext {
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        left: 0;
+        top: 4px;
+    }
+}
+
+.doc-link-rm {
+    position: absolute; 
+    right: 10px; 
+    top: 11px; 
+    background: #fff;
+} 
+
+.form_links {
+    margin-bottom: 20px;
+}
+
+.on-hover-box {
+    position: relative;
+
+    .only-on-hover {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.5s linear;
+    }
+
+    &:hover {
+        .only-on-hover {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+.radio-inline,
+.checkbox-inline {
+    margin-top: 0;
+}
+.form-control.bg-warning {
+    background: #fcf8e3;
+}

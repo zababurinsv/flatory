@@ -1,0 +1,67 @@
+/* 
+    Created on : 11.04.2015, 12:49:56
+    Author     : Valery Shusharin <shusharin_valery@mail.ru>
+*/
+.tile_galery {
+
+    list-style: none;
+    padding: 0;
+
+    li {
+        width: 120px;
+        height: 150px;
+        float: left;
+        padding: 5px;
+        position: relative;
+
+        img {
+            max-width: 110px;
+            max-height: 110px;
+            min-width: 110px;
+            margin: 0 auto;
+        }
+    }
+
+    .tile_galery__label {
+        display: inline-block;
+        width: 85px;
+        white-space: nowrap;
+        text-overflow: ellipsis; 
+        overflow: hidden;
+    }
+
+    .item_control {
+        box-sizing: border-box;
+        width: 100px;
+        height: 16px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 0 5px;
+        background: rgba(250, 234, 184, 0.7);
+        cursor: move;
+
+        i {
+            cursor: pointer;
+
+            &:hover {
+                font-size: 1.2em;
+            }
+        }
+    }
+    
+    .item_settings {
+        display: none;
+        position: absolute;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #DAD5D5;
+        top: -65px;
+        background: #fff;
+        border-radius: 5px;
+        
+        input {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,65 @@
+/* 
+    Created on : 19.10.2014, 21:13:11
+    Author     : Valery Shusharin <shusharin_valery@mail.ru>
+*/
+.flatory_pagination .fl_arrow, 
+.flatory_pagination i,
+.flatory_pagination span, 
+.flatory_pagination input {
+    display: inline-block;
+    float: left;
+    margin: 6px 0;
+}
+.flatory_pagination span {
+    margin-left: 10px;
+}
+.flatory_pagination input {
+    width: 42px;
+    height: 28px;
+    margin: 2px 0;
+    padding: 2px 5px;
+    border: 1px solid #ececec;
+    background: #fff;
+    box-shadow: inset 1px 1px 3px 0px rgba(0,0,0,0.2);
+}
+.flatory_pagination input,
+.flatory_pagination span {
+    font-family: 'Open Sans';
+    font-size: 14px;
+    text-align: right;
+    color: #848484;
+}
+.flatory_pagination .fl_arrow, 
+.flatory_pagination i,
+.fl_arrow {
+    background: url(/images/paginate_green.png) no-repeat;
+}
+.flatory_pagination .fl_arrow,
+.fl_arrow {
+    width: 13px;
+    height: 20px;
+}
+.flatory_pagination i {
+    width: 1px;
+    height: 20px;
+    background-position: -6px -40px;
+    margin: 6px 20px;
+}
+.flatory_pagination .fl_prev,
+.fl_prev {
+    background-position: 0 0;
+}
+.flatory_pagination .fl_next,
+.fl_next {
+    background-position: 0 -20px;
+}
+
+.flatory_pagination .color_green {
+    color: $link_color;
+    font-weight: bold;
+}
+
+.flatory_pagination__center {
+    max-width: 225px; 
+    margin: 0 auto;
+}

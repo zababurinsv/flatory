@@ -1,0 +1,94 @@
+/* 
+    Created on : 10.12.2014, 0:31:48
+    Author     : Valery Shusharin <shusharin_valery@mail.ru>
+*/
+.social_gray-sprite, .social_gray-fb, .social_gray-in, .social_gray-instagram, .social_gray-ok, .social_gray-tw, .social_gray-vk, .social_gray-yt {
+    display: block;
+    width: 26px;
+    height: 26px;
+    background-image: url('/images/social_gray.png');
+    background-repeat: no-repeat;
+    
+    &:hover {
+        background-image: url('/images/social.png');
+    }
+}
+
+.social-sprite, .social-fb, .social-in, .social-instagram, .social-ok, .social-tw, .social-vk, .social-yt {
+    display: block;
+    width: 26px;
+    height: 26px;
+    background-image: url('/images/social.png');
+    background-repeat: no-repeat;
+}
+
+.social_gray-fb {
+    background-position: 0 0;
+}
+
+.social_gray-in {
+    background-position: 0 -26px;
+}
+
+.social_gray-instagram {
+    background-position: 0 -52px;
+}
+
+.social_gray-ok {
+    background-position: 0 -78px;
+}
+
+.social_gray-tw {
+    background-position: 0 -104px;
+}
+
+.social_gray-vk {
+    background-position: 0 -130px;
+}
+
+.social_gray-yt {
+    background-position: 0 -156px;
+}
+
+.social-fb {
+    background-position: 0 0;
+}
+
+.social-in {
+    background-position: 0 -26px;
+}
+
+.social-instagram {
+    background-position: 0 -52px;
+}
+
+.social-ok {
+    background-position: 0 -78px;
+}
+
+.social-tw {
+    background-position: 0 -104px;
+}
+
+.social-vk {
+    background-position: 0 -130px;
+}
+
+.social-yt {
+    background-position: 0 -156px;
+}
+
+/*nav social*/ 
+.nav-social {
+    margin: 0;
+    padding: 0;
+    margin-top: 24px;
+    float: left;
+    list-style: none;
+    
+    li {
+        display: inline-block;
+        margin-left: 10px;
+    }
+}
+

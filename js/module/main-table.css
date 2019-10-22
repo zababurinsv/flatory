@@ -1,0 +1,102 @@
+td.plan{
+    display: flex;
+    align-items: flex-start;
+    font-size: 1vw;
+    height: 5vw;
+    border: none;
+}
+
+input#search_input_id{
+    text-align: center;
+    font-size: 0.5vw;
+    padding: 0;
+}
+div.panel-body{
+    display: flex;
+    flex-direction: column;
+}
+input#search_input_Developer{
+    text-align: center;
+    font-size: 0.5vw;
+    padding: 0;
+}
+input#search_input_Object{
+    text-align: center;
+    font-size: 0.5vw;
+    padding: 0;
+}
+
+input#search_input_Deadline{
+    text-align: center;
+    font-size: 0.5vw;
+    padding: 0;
+}
+input#search_input_houseClass{
+    font-size: 0.5vw;
+    text-align: center;
+    padding: 0;
+}
+
+
+input#search_input_houseType{
+    font-size: 0.5vw;
+    text-align: center;
+    padding: 0;
+}
+input#search_input_Metro{
+    font-size: 0.5vw;
+    text-align: center;
+    padding: 0;
+}
+input#search_input_geo{
+    font-size: 0.5vw;
+    text-align: center;
+    padding: 0;
+}
+input#search_input_plan{
+    font-size: 0.5vw;
+    text-align: center;
+    padding: 0;
+}
+input#search_input_price{
+    font-size: 0.5vw;
+    text-align: center;
+    padding: 0;
+}
+input#search_input_Finish{
+    text-align: center;
+    font-size: 0.5vw;
+    padding: 0;
+}
+div#menuItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 0.5vw;
+    align-items: center;
+}
+button.btn{
+    width: 7.2%;
+    height: min-content;
+    height: 0%;
+}
+input#search_input_AdditionalInfo{
+    font-size: 0.5vw;
+    text-align: center;
+    padding: 0;
+}
+input#search_input_edit{
+    font-size: 0.5vw;
+    text-align: center;
+    padding: 0;
+}
+button{
+    text-align: center;
+    justify-content: center;
+}
+button.btn-secondary{
+    align-self: center;
+    text-align: -webkit-right;
+    box-sizing: border-box;
+    height: 1.2vw;
+}

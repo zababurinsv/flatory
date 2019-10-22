@@ -1,0 +1,15 @@
+# chmod +x yui_min_js
+yui bootstrap_modules.js -o bootstrap_modules.min.js
+yui catalog.js -o catalog.min.js
+yui forms.js -o forms.min.js
+yui geo_index.js -o geo_index.min.js
+yui jquery-1.8.3.js -o jquery-1.8.3.min.js
+yui jquery_ext.js -o jquery_ext.min.js
+yui kartoteka_organizations.js -o kartoteka_organizations.min.js
+yui main.js -o main.min.js
+yui map.js -o map.min.js
+yui map_route.js -o map_route.min.js
+yui ../search.js -o ../search.min.js
+yui ../fl/fl_gallery.js -o ../fl/fl_gallery.min.js
+
+
